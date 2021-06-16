@@ -1,0 +1,51 @@
+.sign-up {
+    height: 100vh;
+
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sign-up h1 {
+    position: absolute;
+    top: 5%;
+}
+
+.sign-up input {
+    height: 2rem;
+    width: 15rem;
+
+    border-radius: 0.5rem;
+    padding: 1rem;
+    outline: none;
+
+
+}
+
+.sign-up input::placeholder {
+
+}
+
+.sign-up button {
+    width: 15rem;
+    height: 2rem;
+
+    border-radius: 0.5rem;
+
+
+    font-size: 0.5em;
+    cursor: pointer;
+}
+
+.sign-up button:hover {
+
+}
+
+.sign-up p {
+    color: rgb(248, 198, 198);
+    text-shadow: 1px 1px 0 red;
+    font-size: 0.5em;
+}
