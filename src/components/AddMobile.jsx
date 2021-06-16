@@ -35,6 +35,10 @@ function AddMobile(props) {
                 <label >Price</label>
                 <input type="text" name="price"
                     ref={(el) => (inputRef.current["price"] = el)} />
+
+                    <label >image</label>
+                <input type="text" name="image"
+                    ref={(el) => (inputRef.current["image"] = el)} />
                 <div>
                     <button className="button" onClick={clickhandler}> save </button>
                 </div>

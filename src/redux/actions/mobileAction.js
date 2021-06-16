@@ -1,5 +1,9 @@
-import * as  actions from './actionTypes'
-import app from "../store/firebaseConfig";
+import * as  actions from './action-types'
+// import app from "../store/firebaseConfig";
+// import {database} from "../store/firebaseConfig"
+import Firebase from "../store/firebaseConfig"
+
+const database=Firebase.firestore()
 
 export const fetchMobileInprogress = () => ({
     type: actions.FETCH_MOBILES_INPROGRESS,
@@ -22,7 +26,7 @@ export const fetchMobiles = () => {
     return async function(dispatch) {
         try {
             dispatch(fetchMobileInprogress());
-            let getRequest = await app.collection('mobiles').get();
+            let getRequest = await database.collection('mobiles').get();
             let data = [];
             getRequest.docs.forEach((doc) =>
                 data.push(doc.data()));
@@ -44,7 +48,7 @@ export const addMobile = (mobileDetails) => {
         console.log("mobileDetails  ", mobileDetails)
 
         try {
-            app.collection("trips").add(
+            database.collection("mobiles").add(
 
                 mobileDetails)
         } catch (error) {

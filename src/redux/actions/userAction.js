@@ -1,5 +1,8 @@
-import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_SUCCESS, SIGNUP_SUCCESS, SIGNUP_ERROR } from "./actionTypes"
-import app from "../store/firebaseConfig";
+import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_SUCCESS, SIGNUP_SUCCESS, SIGNUP_ERROR } from "../actions/action-types"
+// import app from "../store/firebaseConfig";
+// import Firebase from '../config/Firebase'
+ import Firebase from "../store/firebaseConfig"
+const database=Firebase.firestore()
 
 export const loginSucess = (data) => ({
     type: LOGIN_SUCCESS,
@@ -32,7 +35,7 @@ export const signupErr = (error) => ({
 export const signUp = (email, password) => {
     return async function(dispatch) {
         try{
-            await app.auth().createUserWithEmailAndPassword(email, password);
+            await Firebase.auth().createUserWithEmailAndPassword(email, password);
             dispatch(signupSuccess());
         }catch(error) {
             dispatch(signupErr(error.message));
@@ -41,9 +44,11 @@ export const signUp = (email, password) => {
 }
 
 export const signIn = (email, password) => {
+    console.log(" Inside in Sign")
     return async function(dispatch) {
         try {
-            const userCredential = await app.auth().signInWithEmailAndPassword(email, password);
+            const userCredential = await Firebase.auth().signInWithEmailAndPassword(email, password);
+            console.log("userCredential  "  , userCredential)
             dispatch(loginSucess(userCredential.user.email));
         }
         catch(error) {
@@ -56,7 +61,7 @@ export const signIn = (email, password) => {
 export const signOut = () => {
     return async function(dispatch) {
         try {
-            await app.auth().signOut();
+            await Firebase.auth().signOut();
             dispatch(logoutSucess());
         }
         catch(err) {

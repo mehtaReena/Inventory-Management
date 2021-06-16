@@ -9,7 +9,9 @@ function App() {
     const history = useHistory();
 
     const clickhandler = () => {
+        console.log( validate)
         if(validate) {
+           history.push('/mobiles')
 
         }
     }
@@ -20,7 +22,7 @@ function App() {
             <div className="container">
                   <Navbar/>
                 <div className="center">
-                    <div  onClick={clickhandler}>&#10140;</div>
+                    <button  onClick={clickhandler}>&#10140; mobiles</button>
                     <p className={validate ? '' : 'not-validated'}>Signed in...</p>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import { FETCH_MOBILES_SUCCESS, FETCH_MOBILES_INPROGRESS, FETCH_MOBILES_ERROR} from '../actions/actionTypes';
+import { FETCH_MOBILES_SUCCESS, FETCH_MOBILES_INPROGRESS, FETCH_MOBILES_ERROR} from '../actions/action-types';
 
 let initialState = {
     loading: false,
@@ -12,7 +12,8 @@ export default function mobileReducer(state = initialState, action) {
         case FETCH_MOBILES_INPROGRESS:
             return { ...state, loading: true };
         case FETCH_MOBILES_SUCCESS:
-            return { ...state, mobiles: action.payload, loading: false , error:null};
+            console.log("success")
+            return { ...state, mobiles:action.payload, loading: false , error:null};
         case FETCH_MOBILES_ERROR:
             return { ...state, error: action.error };
 

@@ -3,19 +3,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { fetchMobiles } from '../redux/actions/mobileAction';
 import MobileCard from './MobileCard'
+import Navbar from './Navbar'
 
 function Mobiles(props) {
-    let dispatch = useDispatch();
-    const { mobiles, loading,error } = useSelector((state) => state.mobiles);
-    console.log(" mobile ", mobiles)
-    const history = useHistory();
-
-
+    let history= useHistory();
+   let dispatch =useDispatch()
+   let mobileState= useSelector(state=>state.mobileState)
+   console.log("mobileState    " , mobileState)
     useEffect(() => {
-        console.log("Inside Use Effect")
-        dispatch(fetchMobiles())
-        // eslint-disable-next-line
-    }, []);
+        // Update the document title using the browser API
+      console.log("use...")
+      dispatch(fetchMobiles())
+
+      },[]);
+
+
+
+
 
     const clickHandler=()=>{
         history.push("/addMobile");
@@ -24,15 +28,17 @@ function Mobiles(props) {
 
     return (
         <div>
-
-            <div className="row">
-                {loading ? (
+           <Navbar/>
+            <div className="mobile-container">
+                {mobileState.loading ? (
                     <h3>Loading . . .</h3>
                 ) : (
                     <>
-                        {mobiles.map((item) =>
+                        {mobileState.mobiles.map((item) =>
                             <MobileCard
                                 name={item.name}
+                                url={item.image}
+                                price={item.price}
                             />
 
                         )}
