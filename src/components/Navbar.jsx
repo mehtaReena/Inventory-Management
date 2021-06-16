@@ -2,7 +2,8 @@
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../redux/actions/userAction";
-
+import Menus from "./Menus";
+import { Link } from  "react-router-dom";
 
 function Navbar() {
     const history = useHistory();
@@ -19,15 +20,19 @@ function Navbar() {
 
     const {validate} = useSelector(state => state.userState);
 
-    return (
-        <nav>
+    return(
+        <div className='nav-bar'>
+            <div className='user'>
+            <Link to={`/`} className='link'> <h3>Hi </h3></Link>
+            </div>
 
-
-                <button onClick={signOut}>signOut</button>
-
-                <p onClick={singIn}>SignIn</p>
-                  </nav>
-    );
+           <div className='nav-menu'>
+               <div><Link to={'/laptops'} className='link'> laptops</Link>   </div>
+               <div><Link to={'/mobiles'} className='link'> Mobiles </Link></div>
+               <div><Link to={'/appliances'} className='link'> Appliances </Link></div>
+           </div>
+        </div>
+    )
 }
 
 

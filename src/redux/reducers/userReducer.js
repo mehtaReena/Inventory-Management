@@ -1,4 +1,4 @@
-import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_SUCCESS, SET_CURRENT_USER, SIGNUP_ERROR, SIGNUP_SUCCESS } from "../actions/action-types";
+import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_SUCCESS, SET_CURRENT_USER, SIGNUP_ERROR, SIGNUP_SUCCESS } from "../actions/actionTypes";
 
 const initialState = {
     currentUser: null,

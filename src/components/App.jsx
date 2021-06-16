@@ -18,9 +18,8 @@ function App() {
         <>
 
             <div className="container">
-            {/* <Navbar /> */}
+                  <Navbar/>
                 <div className="center">
-
                     <div  onClick={clickhandler}>&#10140;</div>
                     <p className={validate ? '' : 'not-validated'}>Signed in...</p>
                 </div>
