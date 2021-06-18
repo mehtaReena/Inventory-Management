@@ -1,9 +1,11 @@
 
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+
+import { Link ,useHistory} from "react-router-dom";
+
 import { signIn } from "../redux/actions/userAction";
-import Navbar from "./Navbar";
+
 
 function SignIn() {
     const email = useRef();
@@ -14,22 +16,28 @@ function SignIn() {
     const { validated, signInError } = userState;
     console.log(   "   validated : ",userState );
 
+
     const clickhandler = () => {
+
         dispatch(signIn(email.current.value, password.current.value));
+
     };
 
-
-    if (validated){
-        console.log(   "   validated : " ,validated );
-        history.push("/moblies");
-
+    if (userState.validate){
+        console.log(   "   validated : " ,userState.validate );
+        history.push("/");
 
     }
 
+
+
+
+
     return (
         <>
-            <Navbar />
+
             <div className="signin">
+                <h3> Login </h3>
                 <input
                     type="email"
                     name="email"
@@ -42,9 +50,10 @@ function SignIn() {
                     ref={password}
                     placeholder="password"
                 />
-                <button onClick={clickhandler}>SignIn</button>
+
+                <button className ="nav-link" onClick={clickhandler}> 🙎‍♂️ SignIn</button>
                 {signInError ? <p>{signInError}</p> : null}
-                <Link to="/signup">Create an account</Link>
+                <Link to="/signup">  🙎‍♂️Create an account</Link>
             </div>
         </>
     );

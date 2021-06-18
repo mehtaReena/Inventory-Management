@@ -21,12 +21,12 @@ export const fetchMobilerror = (error) => ({
 
 
 
-export const fetchMobiles = () => {
+export const fetchMobiles = (category) => {
     console.log(" fetchMobiles")
     return async function(dispatch) {
         try {
             dispatch(fetchMobileInprogress());
-            let getRequest = await database.collection('mobiles').get();
+            let getRequest = await database.collection(category).get();
             let data = [];
             getRequest.docs.forEach((doc) =>
                 data.push(doc.data()));

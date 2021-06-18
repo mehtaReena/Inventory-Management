@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { fetchMobiles } from '../redux/actions/mobileAction';
-import MobileCard from './MobileCard'
+import MobileCard from './ProductCard'
 import Navbar from './Navbar'
 
 function Mobiles(props) {
@@ -46,7 +46,7 @@ function Mobiles(props) {
 
                 )}
             </div>
-            <button onClick={clickHandler}> Add mobile</button>
+
 
         </div>
     );

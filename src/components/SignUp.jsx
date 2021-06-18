@@ -7,6 +7,7 @@ import "../styles.css"
 function SignUp() {
     const email = useRef();
     const password = useRef();
+    const name = useRef();
     const repassword = useRef();
     const history = useHistory();
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function SignUp() {
             return;
         };
 
-        dispatch(signUp(email.current.value, password.current.value));
+        dispatch(signUp(email.current.value, password.current.value ,name.current.value));
     }
 
     if(confirm) history.push("/");
@@ -27,6 +28,12 @@ function SignUp() {
         <div className="sign-up">
             <h4>Create account.</h4>
             <div>
+            <input
+                    type="text"
+                    name="name"
+                    ref={name}
+                    placeholder="name"
+                />
             <input type="email" ref={email} placeholder="email" />
             <div>
              <input type="password" ref={password} placeholder="password" />

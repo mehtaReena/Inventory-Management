@@ -1,6 +1,7 @@
-import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_SUCCESS, SET_CURRENT_USER, SIGNUP_ERROR, SIGNUP_SUCCESS } from "../actions/action-types";
+import { LOGIN_ERROR, LOGIN_SUCCESS,LOGIN_IN_PROGRESS, LOGOUT_ERROR, LOGOUT_SUCCESS, SET_CURRENT_USER, SIGNUP_ERROR, SIGNUP_SUCCESS } from "../actions/action-types";
 
 const initialState = {
+    loading: false,
     currentUser: null,
     signinError: null,
     signoutError: null,
@@ -11,15 +12,18 @@ const initialState = {
 
 export function userReducer(state=initialState, action) {
     switch(action.type) {
+        case LOGIN_IN_PROGRESS:
+            return { ...state, loading: true };
         case LOGIN_SUCCESS:
             // console.log(" Login success..." ,state , initialState.validate )
-            return {...state, signinError: null, validate: true, currentUser: action.payload};
+            return {...state, signinError: null, validate: true, loading :false,currentUser: action.payload};
         case LOGIN_ERROR:
             return {...state, signinError: action.error};
         case SET_CURRENT_USER:
             return {...state, currentUser: action.payload ,validate: true};
         case LOGOUT_SUCCESS:
-            return {...state, signoutError: null, validate: false};
+            console.log("LOGOUT_SUCCESS")
+            return { state:null,signoutError: null, validate: false ,currentUser:null};
         case LOGOUT_ERROR:
             return {...state, signoutError: action.error};
         case SIGNUP_SUCCESS:

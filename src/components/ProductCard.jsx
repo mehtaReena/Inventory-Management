@@ -1,20 +1,21 @@
 import React from 'react';
+import '../styles.css'
 
-function MobileCard(props) {
+function ProductCard(props) {
     console.log( props.url)
     return (
         <div className='card'>
             <div className="image-div">
             <img src = {props.url} alt =''/>
             </div>
-            <div>
+            <div className="cardInfo">
             <p>{props.name}</p>
             <p>{props.price}</p>
-
-            </div>
             <div>
                 <button> Delete</button>
             </div>
+            </div>
+
 
 
     </div>
@@ -22,4 +23,4 @@ function MobileCard(props) {
 
 }
 
-export default MobileCard;
+export default ProductCard;

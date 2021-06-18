@@ -13,9 +13,10 @@ body {
     font-family: 'Mallanna', sans-serif;
     overflow: hidden;
 }
-h2{
+h3{
   color: #3f0069;
   text-align: center;
+
 }
 
 
@@ -100,16 +101,29 @@ h2{
   input[type=text] {
     width: 55%;
   padding: 10px 15px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  }
+
+  input[type=email] {
+    width: 80%;
+  padding: 10px 15px;
 
   box-sizing: border-box;
   border-radius: 7px;
   }
 
-  input[type=date] {
 
+  input[type=password] {
+    width: 80%;
+  padding: 10px 15px;
+  box-sizing: border-box;
   border-radius: 7px;
-  padding:6px;
   }
+
+
+
+
   textarea {
 
     border-radius: 7px;
@@ -122,9 +136,11 @@ h2{
 
     .image-div{
         display: flex;
-        object-fit: cover;
-         width: 150px;
-         height: 100%
+         object-fit: cover;
+         width: 200px;
+         height:100%;
+         flex:3;
+
     }
     img{
         width: 100%;
@@ -136,14 +152,134 @@ h2{
         flex-direction: row;
         border-radius: 7px;
         border: 1px solid black;
-        width: 100%;
-        height: 200px;
+        box-shadow: darkgray;
+        width: 400px;
+        height: 300px;
         padding: 20px;
+        gap:1rem;
+    }
+    .cardInfo{
+        display: flex;
+        flex-direction: column;
+        flex:2;
+        gap:1rem;
     }
     .mobile-container{
         display: flex;
         flex-direction: column;
         width: 100vw;
-
         padding: 40px;
     }
+
+    .nav{
+        display: flex;
+        background-color: cadetblue;
+        height: 20vh;
+        width: 100vw;
+        justify-content: space-between;
+        flex-direction: column;
+        justify-items: center;
+        font-size: 30px;
+        color: rgb(0, 0, 19);
+    }
+    .nav-link{
+        padding: 7px;
+        display: flex;
+        width:120px;
+        border-radius: 7px;
+        background: transparent;
+        border: none;
+        align-self: flex-end;
+        font-size: 15px;
+
+    }
+    .navUser{
+        display: flex;
+        flex-direction: row;
+
+
+        font-size: 14px;
+         justify-content: flex-end;
+         justify-items: center;
+         align-items: center;
+         gap:1rem;
+
+
+    }
+
+   .catagories{
+
+    width: 500px;
+    height: 40px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: rgb(0, 0, 19);
+    background-color: #eee;
+    border-radius: 5px;
+    outline: none;
+
+   }
+   .signin{
+       margin-top: 80px;
+       display: flex;
+       height: 400px;
+       width: 500px;
+    color:white;
+    flex-direction: column;
+    background-color: #586BA9;
+    border-radius: 9px;
+    border: 2px solid black;
+    padding: 30px;
+    gap:1rem;
+   }
+   a{
+       text-decoration: none;
+       color:white;
+   }
+   .display{
+       display: flex;
+       flex-direction: row;
+       height: 100vh;
+
+   }
+   .sidebar{
+       display: flex;
+       flex-direction: column;
+       flex:1;
+       border: 1px solid black;
+       gap:1rem;
+
+   }
+   .details{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+
+}
+.detail-container{
+    display: flex;
+    flex-flow: column;
+    border: 1px solid black;
+    padding: 20px;
+    flex:5;
+    gap:2rem;
+    border-radius: 7px;
+
+}
+.add{
+    display: flex;
+    padding: 7px;;
+    width: 150px;
+    background-color:cadetblue;
+    color: white;
+    font-size: 18px;
+    border-radius: 7px;
+    cursor: pointer;
+
+    justify-content: center;
+
+}
+
+
+

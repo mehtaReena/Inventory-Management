@@ -2,10 +2,12 @@
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../redux/actions/userAction";
+import '../styles.css';
 
 function Nav() {
     const history = useHistory();
     const dispatch = useDispatch();
+
 
     const _singIn = () => {
         history.push("/signin");
@@ -16,16 +18,24 @@ function Nav() {
         history.push("/");
     }
 
-    const {validated} = useSelector(state => state.userState);
+    const userState = useSelector((state) => state.userState);
 
     return (
-        <div  className="nav">
-            <h3>Inventory Management</h3>
-            {validated ?
-                <p onClick={_signOut}>SignOut</p>
-                :
-                <p onClick={_singIn}>SignIn</p>
-            }
+        <div className="nav">
+            <h3>BestBuy!</h3>
+            <div>
+
+                 <div className="navUser">
+                     <p> Hi {userState.currentUser}</p>
+
+                {userState.validate ?
+                    <button className="nav-link" onClick={_signOut}>  🙎‍♂️ SignOut</button>
+                    :
+                    <button className="nav-link" onClick={_singIn}>  🙎‍♂️ SignIn</button>
+                }
+            </div>
+            </div>
+
         </div>
     );
 }
