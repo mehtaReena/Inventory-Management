@@ -1,4 +1,4 @@
-import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_SUCCESS, SIGNUP_SUCCESS, SIGNUP_ERROR } from "../actions/action-types"
+import { LOGIN_ERROR, LOGIN_SUCCESS,LOGIN_IN_PROGRESS, LOGOUT_ERROR, LOGOUT_SUCCESS, SIGNUP_SUCCESS, SIGNUP_ERROR  } from "../actions/action-types"
 // import app from "../store/firebaseConfig";
 // import Firebase from '../config/Firebase'
  import Firebase from "../store/firebaseConfig"
@@ -7,6 +7,10 @@ const database=Firebase.firestore()
 export const loginSucess = (data) => ({
     type: LOGIN_SUCCESS,
     payload: data
+});
+
+export const loginprogress = () => ({
+    type: LOGIN_IN_PROGRESS,
 });
 
 export const loginError = () => ({
@@ -47,6 +51,7 @@ export const signIn = (email, password) => {
     console.log(" Inside in Sign")
     return async function(dispatch) {
         try {
+            dispatch(loginprogress());
             const userCredential = await Firebase.auth().signInWithEmailAndPassword(email, password);
             console.log("userCredential  "  , userCredential)
             dispatch(loginSucess(userCredential.user.email));
