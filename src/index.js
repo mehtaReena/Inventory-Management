@@ -8,7 +8,8 @@ import App from "./components/App";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 
-import AddMobile from "./components/AddMobile";
+import AddProduct from "./components/AddProduct";
+import Products from "./components/Products";
 
 
 ReactDOM.render(
@@ -18,7 +19,8 @@ ReactDOM.render(
                 <Route exact path="/" component={App} />
                 <Route exact path="/signin" component={SignIn} />
                 <Route path="/signup" component={SignUp} />
-                <Route exact path="/addMobile" component={AddMobile} />
+                <Route exact path="/addProduct" component={AddProduct} />
+                <Route path='/products' component={Products} />
 
             </Switch>
         </Router>

@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Link ,useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { signIn } from "../redux/actions/userAction";
 
@@ -13,8 +13,8 @@ function SignIn() {
     const history = useHistory();
     const dispatch = useDispatch();
     const userState = useSelector((state) => state.userState);
-    const { validated, signInError } = userState;
-    console.log(   "   validated : ",userState );
+    const { signInError } = userState;
+    console.log("   validated : ", userState);
 
 
     const clickhandler = () => {
@@ -23,9 +23,9 @@ function SignIn() {
 
     };
 
-    if (userState.validate){
-        console.log(   "   validated : " ,userState.validate );
-        history.push("/");
+    if (userState.validate) {
+        console.log("   validated : ", userState.validate);
+        history.push("/products");
 
     }
 
@@ -51,7 +51,7 @@ function SignIn() {
                     placeholder="password"
                 />
 
-                <button className ="nav-link" onClick={clickhandler}> 🙎‍♂️ SignIn</button>
+                <button className="signInBtn" onClick={clickhandler}> 🙎‍♂️ SignIn</button>
                 {signInError ? <p>{signInError}</p> : null}
                 <Link to="/signup">  🙎‍♂️Create an account</Link>
             </div>

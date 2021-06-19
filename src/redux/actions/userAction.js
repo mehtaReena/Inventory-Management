@@ -2,7 +2,7 @@ import { LOGIN_ERROR, LOGIN_SUCCESS,LOGIN_IN_PROGRESS, LOGOUT_ERROR, LOGOUT_SUCC
 // import app from "../store/firebaseConfig";
 // import Firebase from '../config/Firebase'
  import Firebase from "../store/firebaseConfig"
-const database=Firebase.firestore()
+// const database=Firebase.firestore()
 
 export const loginSucess = (data) => ({
     type: LOGIN_SUCCESS,

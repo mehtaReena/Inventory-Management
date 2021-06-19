@@ -27,7 +27,7 @@ function SignUp() {
     return (
         <div className="sign-up">
             <h4>Create account.</h4>
-            <div>
+            <div className="SignUp-from">
             <input
                     type="text"
                     name="name"
@@ -41,7 +41,7 @@ function SignUp() {
             </div>
 
             </div>
-            <div>            <button onClick={clickhandler}>Submit</button></div>
+            <div>            <button className="sign-upbtn"onClick={clickhandler}>Sign-up</button></div>
 
             {signupError ? <p>{signupError}</p> : null}
         </div>

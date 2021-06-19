@@ -22,16 +22,17 @@ export const fetchMobilerror = (error) => ({
 
 
 export const fetchMobiles = (category) => {
-    console.log(" fetchMobiles")
+    console.log(" fetchMobiles" , category)
     return async function(dispatch) {
         try {
             dispatch(fetchMobileInprogress());
             let getRequest = await database.collection(category).get();
             let data = [];
+            // console.log(" fetchMobiles" , getRequest)
             getRequest.docs.forEach((doc) =>
-                data.push(doc.data()));
+                data.push({...doc.data(),id:doc.id}));
             if(data) {
-                   console.log("data " , data)
+                   console.log("data " ,data)
                 dispatch(fetchMobileSuccess(data));
             }
         }catch(err) {
@@ -43,14 +44,28 @@ export const fetchMobiles = (category) => {
 }
 
 
-export const addMobile = (mobileDetails) => {
+export const addMobile = (mobileDetails , category) => {
     return async function(dispatch) {
-        console.log("mobileDetails  ", mobileDetails)
-
+        console.log("mobileDetails  ", mobileDetails , category)
         try {
-            database.collection("mobiles").add(
+            database.collection(category).add(
 
                 mobileDetails)
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
+}
+
+
+export const deleteFromDB = (category , id) => {
+    return async function(dispatch) {
+        console.log("ProductDetails  delete  ", category , id)
+        try {
+            database.collection(category).doc(id).delete()
+
+
         } catch (error) {
             console.error(error);
         }

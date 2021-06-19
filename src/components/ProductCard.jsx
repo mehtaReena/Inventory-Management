@@ -1,7 +1,15 @@
 import React from 'react';
 import '../styles.css'
-
+import { useDispatch } from 'react-redux';
+import { deleteFromDB } from '../redux/actions/mobileAction';
+import { useHistory } from "react-router";
 function ProductCard(props) {
+    let dispatch= useDispatch();
+    const history = useHistory();
+    const deleteProduct=(id)=>{
+         dispatch(deleteFromDB(props.category  , id))
+         history.push("/products");
+    }
     console.log( props.url)
     return (
         <div className='card'>
@@ -12,7 +20,7 @@ function ProductCard(props) {
             <p>{props.name}</p>
             <p>{props.price}</p>
             <div>
-                <button> Delete</button>
+                <button onClick={(e)=>deleteProduct(e.target.value)} value= {props.id}> Delete</button>
             </div>
             </div>
 

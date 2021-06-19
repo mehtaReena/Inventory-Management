@@ -13,6 +13,22 @@ body {
     font-family: 'Mallanna', sans-serif;
     overflow: hidden;
 }
+.homePage{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: lightblue;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    padding: 40px;;
+    font-size: 45px;
+}
+
+.homebtn{
+    width: 180px;
+    background: transparent;
+}
 h3{
   color: #3f0069;
   text-align: center;
@@ -21,13 +37,17 @@ h3{
 
 
 .sign-up {
-    height: 100vh;
+    height: 70vh;
     background-color: #586BA9;
     font-size: 2em;
     display: flex;
     flex-direction: column;
-
+    margin-top: 50px;
+    padding: 40px;
+    width:35vw;
     gap: 1rem;
+    gap:1rem;
+    border-radius: 7px;
 }
 
 .sign-up h1 {
@@ -42,21 +62,22 @@ h3{
     border-radius: 0.5rem;
     padding: 1rem;
     outline: none;
-
+}
+.signInBtn{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    font-size: 1em;
+    cursor: pointer;
 
 }
 
-.sign-up input::placeholder {
 
-}
 
-.sign-up button {
+.sign-upbtn {
     width: 15rem;
     height: 2rem;
-
     border-radius: 0.5rem;
-
-
     font-size: 0.5em;
     cursor: pointer;
 }
@@ -131,8 +152,29 @@ h3{
     }
 
     .button{
-        padding: 7px;
+     padding: 9px;
+     border-radius: 7px;
+
+     cursor: pointer;
+     text-transform: uppercase;
     }
+    .button:hover {
+        background-color: #3e8e41;
+        color: white;
+    }
+
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+      color: white;
+    }
+   select {
+        width: 80%;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      border-radius: 7px;
+      }
 
     .image-div{
         display: flex;
@@ -248,7 +290,18 @@ h3{
        flex:1;
        border: 1px solid black;
        gap:1rem;
+       padding:20px;
 
+   }
+   .sidebar-category{
+       display: flex;
+       justify-content: center;
+       border: 1px solid black;
+       border-radius: 7px;
+       height: 100px;
+       justify-items: center;
+       align-items: center;
+       box-shadow: 5px 10px #888888;
    }
    .details{
     display: flex;
@@ -280,6 +333,28 @@ h3{
     justify-content: center;
 
 }
+
+.categoryIcon{
+    padding: 9px;
+    border-radius: 7px;
+    width: 152px;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: fit-content;
+    justify-content: center;
+    justify-items: center;
+   }
+   .categoryIcon:hover {
+       background-color: #3e8e41;
+       color: white;
+   }
+
+   .categoryIcon:active {
+     background-color: #3e8e41;
+     box-shadow: 0 5px #666;
+     transform: translateY(4px);
+     color: white;
+   }
 
 
 
