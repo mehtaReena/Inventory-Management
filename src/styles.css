@@ -314,6 +314,7 @@ h3{
     display: flex;
     flex-flow: row wrap;
     width: 100%;
+    gap:1rem;
 
 
 }
@@ -326,6 +327,12 @@ h3{
     gap:2rem;
     border-radius: 7px;
 
+}
+.heading{
+    display: flex;
+    text-transform:uppercase;
+    justify-content: center;
+    justify-items: center;
 }
 .add{
     display: flex;
@@ -418,6 +425,19 @@ h3{
     flex-direction: row;
     gap:1rem;
 }
+
+.remove-product:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    color: white;
+  }
+  .add-product:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    color: white;
+  }
 
 
 

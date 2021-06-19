@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles.css'
 import { useDispatch } from 'react-redux';
 import { deleteFromDB ,updateProduct } from '../redux/actions/mobileAction';
 import { useHistory } from "react-router";
 function ProductCard(props) {
     let dispatch= useDispatch();
+     let [ qty, setQty]= useState(props.qty);
+
     const history = useHistory();
     const deleteProduct=(id)=>{
          dispatch(deleteFromDB(props.category  , id))
@@ -13,12 +15,14 @@ function ProductCard(props) {
 
     const addClickHandler= ()=>{
         dispatch(updateProduct(props.category  , props.qty+1 , props.id))
-        history.push("/products");
+         setQty(qty+1);
+
 
     }
 
     const removeClickHandler= ()=>{
         dispatch(updateProduct(props.category  , props.qty-1 , props.id))
+        setQty(qty-1);
         history.push("/products");
 
     }
@@ -34,7 +38,7 @@ function ProductCard(props) {
             <div className="quantity">
 
             <button className='add-product' onClick={addClickHandler} value={props.id}>+</button>
-            <span className='amount' >  Quantity:{props.qty}</span>
+            <span className='amount' >  Quantity:{qty}</span>
                         <button className='remove-product' onClick={removeClickHandler}  value={props.id}>-</button>
                         </div>
             <div>

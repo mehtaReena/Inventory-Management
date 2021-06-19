@@ -22,6 +22,10 @@ function Products() {
            history.push('/addProduct')
 
         }
+        else{
+            alert(" Please Signin")
+            history.push('/')
+        }
     }
 
     const getData=(category) =>{
@@ -44,6 +48,7 @@ function Products() {
 
                       </div>
                       <div className="detail-container">
+                          <h3><div className="heading">{category}</div></h3>
                       <button className= "add" onClick={clickHandler}> Add Product</button>
 
                 {mobileState.loading ? (

@@ -22,7 +22,7 @@ function Nav() {
 
     return (
         <div className="nav">
-            <h3> 🔅 Inventory Management  🔅 </h3>
+            <h3>  Inventory Management   </h3>
             <div>
 
                  <div className="navUser">
