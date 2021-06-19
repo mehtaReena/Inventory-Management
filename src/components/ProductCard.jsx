@@ -20,7 +20,7 @@ function ProductCard(props) {
             <p>{props.name}</p>
             <p>{props.price}</p>
             <div>
-                <button onClick={(e)=>deleteProduct(e.target.value)} value= {props.id}> Delete</button>
+                <button className= "deleteBtn" onClick={(e)=>deleteProduct(e.target.value)} value= {props.id}> Delete</button>
             </div>
             </div>
 
