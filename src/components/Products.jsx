@@ -28,11 +28,7 @@ function Products() {
         setCategory(category);
         dispatch(fetchMobiles(category))
     }
-    useEffect(()=>{
 
-        dispatch(fetchMobiles(category))
-    // eslint-disable-next-line
-    },[])
 
     return (
         <>
@@ -61,6 +57,7 @@ function Products() {
                                 url={item.image}
                                 price={item.price}
                                 category={category}
+                                qty={item.quantity}
                             />
 
                         )}

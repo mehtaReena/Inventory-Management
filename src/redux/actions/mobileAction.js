@@ -72,3 +72,17 @@ export const deleteFromDB = (category , id) => {
 
     }
 }
+
+export const updateProduct = (category, qty ,id) => {
+    return async function(dispatch) {
+        console.log("updateProduct  ", category , qty)
+        try {
+            database.collection(category).doc(id).update(
+               {quantity:qty}
+               )
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
+}

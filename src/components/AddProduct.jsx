@@ -16,7 +16,8 @@ function AddProduct(props) {
             name: inputRef.current["name"].value,
             description: inputRef.current["description"].value,
             price: inputRef.current["price"].value,
-            image :inputRef.current["image"].value
+            image :inputRef.current["image"].value,
+            quantity :inputRef.current["qty"].value
         };
 
         console.log("ADD product .." , productDetails)
@@ -42,6 +43,11 @@ function AddProduct(props) {
                 <label >Price</label>
                 <input type="text" name="price"
                     ref={(el) => (inputRef.current["price"] = el)} />
+
+                    <label >Quantity</label>
+
+                <input type="number" name="qty"
+                    ref={(el) => (inputRef.current["qty"] = el)} />
 
                 <label >image</label>
                 <input type="text" name="image"
