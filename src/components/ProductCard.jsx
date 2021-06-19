@@ -14,15 +14,19 @@ function ProductCard(props) {
     }
 
     const addClickHandler= ()=>{
-        dispatch(updateProduct(props.category  , props.qty+1 , props.id))
+        dispatch(updateProduct(props.category  ,qty+1 , props.id))
          setQty(qty+1);
 
 
     }
 
     const removeClickHandler= ()=>{
-        dispatch(updateProduct(props.category  , props.qty-1 , props.id))
-        setQty(qty-1);
+        dispatch(updateProduct(props.category  , qty-1 , props.id))
+         if(qty>0){
+            setQty(qty-1);
+
+         }
+
         history.push("/products");
 
     }
