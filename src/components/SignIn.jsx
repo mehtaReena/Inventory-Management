@@ -25,7 +25,7 @@ function SignIn() {
 
     if (userState.validate) {
         console.log("   validated : ", userState.validate);
-        history.push("/products");
+        history.push("/products/mobiles");
 
     }
 

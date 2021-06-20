@@ -21,9 +21,12 @@ function AddProduct(props) {
         };
 
         console.log("ADD product .." , productDetails)
-         dispatch(addMobile(productDetails , inputRef.current["category"].value,));
-         history.push('/products')
+         dispatch(addMobile(productDetails , inputRef.current["category"].value));
+         history.push({
+            pathname: "/products/"+inputRef.current["category"].value
 
+
+        });
 
     }
     return (

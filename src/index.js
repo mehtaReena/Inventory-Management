@@ -20,8 +20,7 @@ ReactDOM.render(
                 <Route exact path="/signin" component={SignIn} />
                 <Route path="/signup" component={SignUp} />
                 <Route exact path="/addProduct" component={AddProduct} />
-                <Route path='/products' component={Products} />
-
+                <Route path='/products/:category' component={Products} />
             </Switch>
         </Router>
     </Provider>,

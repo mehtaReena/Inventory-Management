@@ -10,12 +10,12 @@ function ProductCard(props) {
     const history = useHistory();
     const deleteProduct=(id)=>{
          dispatch(deleteFromDB(props.category  , id))
-         history.push("/products");
+         history.push("/products/"+props.category);
     }
 
     const addClickHandler= ()=>{
         dispatch(updateProduct(props.category  ,qty+1 , props.id))
-         setQty(qty+1);
+         setQty(Number(qty+1));
 
 
     }
@@ -23,11 +23,11 @@ function ProductCard(props) {
     const removeClickHandler= ()=>{
         dispatch(updateProduct(props.category  , qty-1 , props.id))
          if(qty>0){
-            setQty(qty-1);
+            setQty(Number(qty-1));
 
          }
 
-        history.push("/products");
+        history.push("/products/"+props.category);
 
     }
     console.log( props.url)
