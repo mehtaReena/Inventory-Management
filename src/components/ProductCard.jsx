@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles.css'
 import { useDispatch } from 'react-redux';
-import { deleteFromDB ,updateProduct } from '../redux/actions/mobileAction';
+import { deleteFromDB ,updateProduct ,fetchMobiles} from '../redux/actions/mobileAction';
 import { useHistory } from "react-router";
 function ProductCard(props) {
     let dispatch= useDispatch();
@@ -9,8 +9,8 @@ function ProductCard(props) {
 
     const history = useHistory();
     const deleteProduct=(id)=>{
-         dispatch(deleteFromDB(props.category  , id))
-         history.push("/products/"+props.category);
+         dispatch(deleteFromDB(props.category  , id));
+         dispatch(fetchMobiles(props.category))
     }
 
     const addClickHandler= ()=>{
