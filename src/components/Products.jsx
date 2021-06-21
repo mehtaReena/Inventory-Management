@@ -14,7 +14,7 @@ function Products(props) {
     useEffect(()=>{
          let cat=props.match.params.category;
         getData(cat);
-
+      // eslint-disable-next-line
     },[])
 
 
