@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles.css'
 import { useDispatch } from 'react-redux';
-import { deleteFromDB ,updateProduct ,fetchMobiles} from '../redux/actions/mobileAction';
+import { deleteFromDB ,updateProduct} from '../redux/actions/mobileAction';
 import { useHistory } from "react-router";
 function ProductCard(props) {
     let dispatch= useDispatch();
