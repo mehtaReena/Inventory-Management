@@ -60,15 +60,14 @@ export const addMobile = (mobileDetails , category) => {
 
 
 export const deleteFromDB = (category , id) => {
-    return async function(dispatch) {
+    return async (dispatch)=> {
         console.log("ProductDetails  delete  ", category , id)
-        try {
-            database.collection(category).doc(id).delete()
 
-
-        } catch (error) {
-            console.error(error);
-        }
+             database.collection(category).doc(id).delete().then(()=>{
+               dispatch(fetchMobiles(category))
+             }).catch ((error) =>{
+            console.error("Error removing document: " ,error);
+        })
 
     }
 }

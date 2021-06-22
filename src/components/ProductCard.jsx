@@ -10,7 +10,7 @@ function ProductCard(props) {
     const history = useHistory();
     const deleteProduct=(id)=>{
          dispatch(deleteFromDB(props.category  , id));
-         dispatch(fetchMobiles(props.category))
+
     }
 
     const addClickHandler= ()=>{

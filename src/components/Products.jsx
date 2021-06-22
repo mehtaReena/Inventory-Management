@@ -8,6 +8,11 @@ import { useEffect, useState } from "react";
 
 function Products(props) {
     const history = useHistory();
+    let dispatch = useDispatch()
+
+    let mobileState = useSelector(state => state.mobileState)
+    console.log("mobileState    ", mobileState)
+
     const { validate } = useSelector(state => state.userState);
     let [category, setCategory] = useState("");
 
@@ -20,10 +25,6 @@ function Products(props) {
 
 
 
-    let dispatch = useDispatch()
-
-    let mobileState = useSelector(state => state.mobileState)
-    console.log("mobileState    ", mobileState)
 
     const clickHandler = () => {
         console.log(validate)
